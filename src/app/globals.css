@@ -32,4 +32,8 @@ body {
   h4 {
     @apply text-xl;
   }
+
+  .page-container {
+    @apply max-w-[120rem] px-5 md:px-6;
+  }
 }

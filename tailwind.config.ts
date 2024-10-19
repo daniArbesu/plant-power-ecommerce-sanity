@@ -17,7 +17,8 @@ const config: Config = {
         display: 'var(--font-sabana-black)',
       },
       backgroundImage: {
-        'hero-image': "url('/images/hero-image.jpg')",
+        'hero-image-no-shadows': "url('/images/hero-image.jpg')",
+        'hero-image-with-shadows': "url('/images/hero-image.png')",
       },
     },
   },
