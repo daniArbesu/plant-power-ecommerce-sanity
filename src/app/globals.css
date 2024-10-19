@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #fafafa;
+  --background: #f4f4f4;
   --foreground: #171717;
 }
 
@@ -25,5 +25,11 @@ body {
 
   h2 {
     @apply text-4xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-xl;
   }
 }
