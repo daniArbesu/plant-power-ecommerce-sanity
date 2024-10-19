@@ -1,4 +1,6 @@
-export const FeaturedArticleIcon = () => {
+import type { FC, SVGProps } from 'react';
+
+export const FeaturedArticleIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,9 +9,8 @@ export const FeaturedArticleIcon = () => {
       width="100%"
       height="100%"
       viewBox="0 0 48 48"
-      preserveAspectRatio="xMidYMid meet"
-      aria-hidden="true"
       role="img"
+      {...props}
     >
       <rect x="0" y="0" width="48" height="48" rx="51" ry="51" fill="#000000"></rect>
       <g transform="translate(12 12) scale(0.5)">
@@ -18,6 +19,15 @@ export const FeaturedArticleIcon = () => {
           fill="#ffffff"
         ></path>
       </g>
+    </svg>
+  );
+};
+
+export const ArrowRightIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg fill="currentColor" role="img" viewBox="0 0 20 21" {...props}>
+      <title>Arrow Right</title>
+      <polygon points="16.172 9 10.101 2.929 11.515 1.515 20 10 19.293 10.707 11.515 18.485 10.101 17.071 16.172 11 0 11 0 9"></polygon>
     </svg>
   );
 };

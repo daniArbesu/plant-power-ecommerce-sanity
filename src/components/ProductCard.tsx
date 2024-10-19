@@ -24,7 +24,7 @@ const ProductCard = ({ product }: ProductProps) => {
           <h4>{name}</h4>
           <p className="text-base text-neutral-500 sm:text-sm">{description}</p>
         </div>
-        <button className="font-display w-1/2 rounded-[2.5rem] bg-black px-4 py-3 uppercase text-white">
+        <button className="font-display w-1/2 rounded-[2.5rem] bg-black px-4 py-3 pl-6 text-left uppercase text-white">
           Comprar
         </button>
       </div>
