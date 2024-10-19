@@ -16,6 +16,9 @@ const config: Config = {
         sans: 'var(--font-outfit), sans-serif',
         display: 'var(--font-sabana-black)',
       },
+      backgroundImage: {
+        'hero-image': "url('/images/hero-image.jpg')",
+      },
     },
   },
   plugins: [],

@@ -9,9 +9,9 @@ const Navbar = () => {
         <Logo className="w-[9.7rem]" />
       </a>
       <button className="rounded-full bg-black">
-        <div className="flex size-10 flex-col items-center justify-between">
+        <div className="flex size-10 flex-col items-center justify-center gap-2">
           <div className="h-[2px] w-1/2 bg-white" />
-          <div className="h-[2px] w-1/2 bg-white" />
+          <div className="hidden h-[2px] w-1/2 bg-white" />
           <div className="h-[2px] w-1/2 bg-white" />
         </div>
       </button>
