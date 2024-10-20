@@ -1,9 +1,9 @@
-import type { simplifiedProduct } from '@/types';
+import type { CardProduct } from '@/types';
 import { FeaturedArticleIcon } from './Icons';
 import Link from 'next/link';
 
 interface ProductProps {
-  product: simplifiedProduct;
+  product: CardProduct;
 }
 
 const ProductCard = ({ product }: ProductProps) => {
@@ -12,7 +12,7 @@ const ProductCard = ({ product }: ProductProps) => {
   return (
     <article className="flex w-full shrink-0 snap-start flex-col gap-5 overflow-visible sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
       <div className="relative w-full cursor-pointer rounded-2xl border border-gray-200 bg-white">
-        <Link href={`/products/${product.slug}`}>
+        <Link href={`/product/${product.slug}`}>
           <img
             src={imageUrl}
             alt="Creatine bottle"
