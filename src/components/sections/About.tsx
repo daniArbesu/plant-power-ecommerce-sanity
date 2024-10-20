@@ -1,11 +1,26 @@
-const About = () => {
+import { client, urlFor } from '@/lib/sanity';
+import Image from 'next/image';
+
+async function fetchImages() {
+  const query = '*[_type == "homePage"][0]';
+
+  const { aboutImage } = await client.fetch(query);
+
+  return urlFor(aboutImage).url();
+}
+
+const About = async () => {
+  const data = await fetchImages();
+
   return (
     <section className="page-container flex w-full flex-col gap-6 py-16 lg:flex-row lg:py-48">
       <div className="flex-grow overflow-hidden rounded-2xl lg:basis-1/2">
-        <img
-          src={'/images/about-image.png'}
+        <Image
+          src={data}
           alt="About Image"
           className="h-full w-full object-cover"
+          width={500}
+          height={500}
         />
       </div>
       <div className="flex flex-grow flex-col text-pretty rounded-2xl bg-[#00643c] p-8 text-white lg:basis-1/2 lg:px-12 lg:py-16">

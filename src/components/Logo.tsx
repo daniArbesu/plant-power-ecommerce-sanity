@@ -1,8 +1,6 @@
-interface LogoProps {
-  className?: string;
-}
+import type { FC, SVGProps } from 'react';
 
-const Logo = ({ className }: LogoProps) => {
+const Logo: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +9,7 @@ const Logo = ({ className }: LogoProps) => {
       viewBox="0 0 866 156"
       fill="none"
       role="img"
-      className={className}
+      {...props}
     >
       <g clipPath="url(#clip0_15_141)">
         <path
