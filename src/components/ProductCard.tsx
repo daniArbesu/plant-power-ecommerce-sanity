@@ -1,23 +1,28 @@
-import type { Product } from '@/types';
+import type { simplifiedProduct } from '@/types';
 import { FeaturedArticleIcon } from './Icons';
+import Link from 'next/link';
 
 interface ProductProps {
-  product: Product;
+  product: simplifiedProduct;
 }
 
 const ProductCard = ({ product }: ProductProps) => {
-  const { name, image, description, doses, featured } = product;
+  const { name, imageUrl, description, doses, featured } = product;
 
   return (
     <article className="flex w-full shrink-0 snap-start flex-col gap-5 overflow-visible sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
       <div className="relative w-full cursor-pointer rounded-2xl border border-gray-200 bg-white">
-        <a href="/products/creatine">
-          <img src={image} alt="Creatine bottle" className="aspect-square w-full object-contain" />
+        <Link href={`/products/${product.slug}`}>
+          <img
+            src={imageUrl}
+            alt="Creatine bottle"
+            className="aspect-square w-full object-contain"
+          />
           <div className="absolute right-4 top-3 size-8">{featured && <FeaturedArticleIcon />}</div>
           <div className="absolute bottom-2 right-4 space-x-1 text-sm">
             <span className="font-semibold">{doses}</span> doses
           </div>
-        </a>
+        </Link>
       </div>
       <div className="space-y-8">
         <div className="space-y-1">
