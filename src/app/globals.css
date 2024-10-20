@@ -27,10 +27,10 @@ body {
     @apply text-4xl lg:text-5xl;
   }
   h3 {
-    @apply text-3xl;
+    @apply text-3xl lg:text-4xl;
   }
   h4 {
-    @apply text-xl;
+    @apply text-xl lg:text-2xl;
   }
 
   .page-container {
