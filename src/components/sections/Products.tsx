@@ -11,6 +11,7 @@ async function getProducts() {
     doses,
     featured,
     "slug": slug.current,
+    price_id,
   "categoryName": category[0]->name,
     "imageUrl": images[0].asset->url
 }`;

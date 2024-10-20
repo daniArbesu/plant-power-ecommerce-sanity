@@ -8,10 +8,10 @@ interface AddToCartProps {
   price: number;
   currency: string;
   image: string;
-  sku: string;
+  price_id: string;
 }
 
-const AddToCart = ({ name, description, price, currency, image, sku }: AddToCartProps) => {
+const AddToCart = ({ name, description, price, currency, image, price_id }: AddToCartProps) => {
   const { addItem, handleCartClick } = useShoppingCart();
 
   const selectedProduct = {
@@ -20,7 +20,7 @@ const AddToCart = ({ name, description, price, currency, image, sku }: AddToCart
     price,
     currency,
     image,
-    sku,
+    price_id,
   };
 
   const handleClick = () => {

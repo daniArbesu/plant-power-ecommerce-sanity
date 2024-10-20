@@ -7,7 +7,7 @@ interface ProductProps {
 }
 
 const ProductCard = ({ product }: ProductProps) => {
-  const { id, name, price, imageUrl, description, doses, featured } = product;
+  const { price_id, name, price, imageUrl, description, doses, featured } = product;
 
   return (
     <article className="flex w-full shrink-0 snap-start flex-col gap-5 overflow-visible sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
@@ -35,7 +35,7 @@ const ProductCard = ({ product }: ProductProps) => {
           currency="EUR"
           description={description}
           image={imageUrl}
-          sku={`sku_${id}`}
+          price_id={price_id}
         />
       </div>
     </article>

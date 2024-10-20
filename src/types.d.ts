@@ -8,6 +8,7 @@ export interface Product {
   doses: number;
   price: number;
   categoryName: string;
+  price_id: string;
 }
 
 export type CardProduct = Omit<Product, 'imageUrl'> & {
