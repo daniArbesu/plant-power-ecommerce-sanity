@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/sections/Navbar';
 import { Outfit } from 'next/font/google';
 import CartProvider from '@/providers/CartProvider';
+import ShoppingCartModal from '@/components/ShoppingCartModal';
 
 const outfit = Outfit({
   weight: ['400', '600', '700'],
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} ${sabanaBlack.variable}`}>
         <CartProvider>
           <Navbar />
+          <ShoppingCartModal />
           {children}
         </CartProvider>
       </body>

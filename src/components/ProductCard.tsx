@@ -1,13 +1,13 @@
 import type { CardProduct } from '@/types';
 import { FeaturedArticleIcon } from './Icons';
 import Link from 'next/link';
-
+import AddToCart from './AddToCart';
 interface ProductProps {
   product: CardProduct;
 }
 
 const ProductCard = ({ product }: ProductProps) => {
-  const { name, imageUrl, description, doses, featured } = product;
+  const { id, name, price, imageUrl, description, doses, featured } = product;
 
   return (
     <article className="flex w-full shrink-0 snap-start flex-col gap-5 overflow-visible sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
@@ -29,9 +29,14 @@ const ProductCard = ({ product }: ProductProps) => {
           <h4>{name}</h4>
           <p className="text-base text-neutral-500 sm:text-sm lg:text-lg">{description}</p>
         </div>
-        <button className="w-1/2 rounded-[2.5rem] bg-black px-4 py-3 pl-6 text-left font-display text-base uppercase text-white">
-          Comprar
-        </button>
+        <AddToCart
+          name={name}
+          price={price}
+          currency="EUR"
+          description={description}
+          image={imageUrl}
+          sku={`sku_${id}`}
+        />
       </div>
     </article>
   );
