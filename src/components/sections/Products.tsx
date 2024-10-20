@@ -3,7 +3,7 @@ import ProductCard from '../ProductCard';
 import { client } from '@/lib/sanity';
 
 async function getProducts() {
-  const query = `*[_type == "product"][0...4] | order(_createdAt desc){
+  const query = `*[_type == "product"][0...10] | order(_createdAt desc){
     "id":_id,
     price,
     name,
