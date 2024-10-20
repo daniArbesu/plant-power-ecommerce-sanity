@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { Outfit } from 'next/font/google';
+import CartProvider from '@/providers/CartProvider';
 
 const outfit = Outfit({
   weight: ['400', '600', '700'],
@@ -29,8 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} ${sabanaBlack.variable}`}>
-        <Navbar />
-        {children}
+        <CartProvider>
+          <Navbar />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
