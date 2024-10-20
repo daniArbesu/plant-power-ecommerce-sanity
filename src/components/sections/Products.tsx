@@ -16,7 +16,11 @@ async function getProducts() {
     "imageUrl": images[0].asset->url
 }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, undefined, {
+    next: {
+      revalidate: 60, // for simple, time-based revalidation in seconds
+    },
+  });
 }
 
 const Products = async () => {

@@ -4,8 +4,29 @@ import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/button';
 
 const ShoppingCartModal = () => {
-  const { cartCount, shouldDisplayCart, handleCartClick, cartDetails, removeItem, totalPrice } =
-    useShoppingCart();
+  const {
+    cartCount,
+    shouldDisplayCart,
+    handleCartClick,
+    cartDetails,
+    removeItem,
+    totalPrice,
+    redirectToCheckout,
+  } = useShoppingCart();
+
+  async function handleCheckoutClick(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    try {
+      console.log('Redirecting to checkout');
+      const result = await redirectToCheckout();
+      console.log(result);
+      if (result.error) {
+        throw new Error(result.error.message);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
@@ -65,7 +86,9 @@ const ShoppingCartModal = () => {
               Los costes de envío e impuestos se calculan en el checkout
             </p>
             <div className="mt-6">
-              <Button className="w-full">Checkout</Button>
+              <Button className="w-full" onClick={handleCheckoutClick}>
+                Checkout
+              </Button>
             </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>

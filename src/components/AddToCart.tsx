@@ -2,7 +2,7 @@
 
 import { useShoppingCart } from 'use-shopping-cart';
 
-interface AddToCartProps {
+export interface AddToCartProps {
   name: string;
   description: string;
   price: number;
