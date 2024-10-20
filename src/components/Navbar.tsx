@@ -3,7 +3,7 @@ import Logo from './Logo';
 
 const Navbar = () => {
   return (
-    <div className="fixed top-0 flex w-full justify-between bg-background px-5 py-4 sm:p-6">
+    <header className="fixed top-0 flex w-full justify-between bg-background px-5 py-4 sm:p-6">
       <h1 className="sr-only">Plant Power</h1>
       <a href="/">
         <Logo className="w-[9.7rem] sm:w-40 lg:w-44" />
@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className="h-[2px] w-1/2 bg-white" />
         </div>
       </button>
-    </div>
+    </header>
   );
 };
 
