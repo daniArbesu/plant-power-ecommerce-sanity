@@ -10,7 +10,7 @@ const About = () => {
       </div>
       <div className="flex flex-grow flex-col text-pretty rounded-2xl bg-[#00643c] p-8 text-white lg:basis-1/2 lg:px-12 lg:py-16">
         <div className="space-y-5">
-          <h2 className="lg:text-[4rem]">Inspirada pela natureza comprovada pela ciência</h2>
+          <h2>Inspirada pela natureza comprovada pela ciência</h2>
           <p>
             Criamos Plant Power com uma base rigorosamente científica, validada por terceiros e
             livre de ingredientes nocivos em todas as nossas formulações, pois tudo que queremos é

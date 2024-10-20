@@ -4,11 +4,16 @@ import { ArrowRightIcon } from '../Icons';
 
 const Featured = () => {
   return (
-    <section className="space-y-6 px-5 pb-16">
-      <div className="overflow-hidden rounded-2xl">
-        <Image src={featuredImage} alt="Featured Image" className="aspect-square object-cover" />
+    // space-y-6
+    <section className="flex flex-col gap-6 px-5 pb-16 lg:flex-row">
+      <div className="flex-shrink flex-grow-0 overflow-hidden rounded-2xl lg:basis-1/2">
+        <Image
+          src={featuredImage}
+          alt="Featured Image"
+          className="aspect-square h-full w-full object-cover lg:aspect-auto"
+        />
       </div>
-      <div className="space-y-8 rounded-2xl bg-[#c4d97f] p-8 md:space-y-12">
+      <div className="flex flex-1 flex-col justify-between space-y-8 rounded-2xl bg-[#c4d97f] p-8 md:space-y-12 lg:basis-1/2 lg:px-12 lg:py-16">
         <div className="space-y-5 md:space-y-6">
           <h2>Imunidade o Ano INteiro</h2>
           <p>
@@ -23,7 +28,7 @@ const Featured = () => {
           <li className="border-b border-black py-1">Aporte de vitaminas e minerais</li>
           <li className="border-b border-black py-1">Testado em laboratórios acreditados</li>
         </ul>
-        <button className="font-display flex h-12 w-fit items-center justify-between gap-5 rounded-[2.5rem] bg-black px-4 py-3 pl-6 text-left uppercase text-white">
+        <button className="flex h-12 w-fit items-center justify-between gap-5 rounded-[2.5rem] bg-black px-4 py-3 pl-6 text-left font-display uppercase text-white">
           <span>Acessar PRODUTO</span>
           <ArrowRightIcon className="size-4" />
         </button>
