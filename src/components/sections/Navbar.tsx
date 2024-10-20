@@ -1,15 +1,25 @@
 'use client';
-import React from 'react';
 import Logo from '../Logo';
 import { Button } from '../ui/button';
 import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { useShoppingCart } from 'use-shopping-cart';
+import { useTransform, useScroll } from 'framer-motion';
+import * as motion from 'framer-motion/client';
 
 const Navbar = () => {
   const { handleCartClick } = useShoppingCart();
+  const { scrollY } = useScroll();
+
+  const backgroundColor = useTransform(scrollY, [0, 200], ['hsla(0 0% 98% 0)', 'hsla(0 0% 98% 1)']);
+
   return (
-    <header className="fixed top-0 z-10 flex w-full items-center justify-between bg-background px-5 py-4 sm:p-6">
+    <motion.header
+      className="fixed top-0 z-10 flex w-full items-center justify-between px-5 py-4 sm:p-6"
+      style={{
+        backgroundColor: backgroundColor as unknown as string,
+      }}
+    >
       <h1 className="sr-only">Plant Power</h1>
       <Link href="/">
         <Logo className="w-[9.7rem] sm:w-40 lg:w-44" />
@@ -26,7 +36,7 @@ const Navbar = () => {
           </div>
         </Button>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
