@@ -1,15 +1,16 @@
-import Image from 'next/image';
-import aboutImage from './images/about-image.png';
-
 const About = () => {
   return (
-    <section className="flex w-full max-w-[120rem] flex-col gap-6 px-5 py-16">
-      <div className="h-full overflow-hidden rounded-2xl">
-        <Image src={aboutImage} alt="About Image" className="aspect-square object-cover" />
+    <section className="page-container flex w-full flex-col gap-6 py-16 lg:flex-row lg:py-48">
+      <div className="flex-grow overflow-hidden rounded-2xl lg:basis-1/2">
+        <img
+          src={'/images/about-image.png'}
+          alt="About Image"
+          className="h-full w-full object-cover"
+        />
       </div>
-      <div className="flex h-full flex-col text-pretty rounded-2xl bg-[#00643c] p-8 text-white">
+      <div className="flex flex-grow flex-col text-pretty rounded-2xl bg-[#00643c] p-8 text-white lg:basis-1/2 lg:px-12 lg:py-16">
         <div className="space-y-5">
-          <h2>Inspirada pela natureza comprovada pela ciência</h2>
+          <h2 className="lg:text-[4rem]">Inspirada pela natureza comprovada pela ciência</h2>
           <p>
             Criamos Plant Power com uma base rigorosamente científica, validada por terceiros e
             livre de ingredientes nocivos em todas as nossas formulações, pois tudo que queremos é
